@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Theory and practice of brain imaging &#8212; Practical Neuroimaging</title>
+    <title>Inserting values into strings &#8212; Practical Neuroimaging</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -45,9 +45,9 @@
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -74,7 +74,7 @@
         
       
       
-      <img src="../_static/logo.png" class="logo" alt="logo">
+      <img src="../_static/reggie.png" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">Practical Neuroimaging</h1>
@@ -88,19 +88,24 @@
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../intro.html">
-   Welcome to your Jupyter Book
+   Theory and practice of brain imaging
   </a>
  </li>
 </ul>
+<p>
+ <span class="caption-text">
+  Images and code and images
+ </span>
+</p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../markdown.html">
-   Markdown Files
+  <a class="reference internal" href="what_is_an_image.html">
+   What is an image?
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../notebooks.html">
-   Content with notebooks
+  <a class="reference internal" href="brisk_python.html">
+   Brisk introduction to Python
   </a>
  </li>
 </ul>
@@ -144,9 +149,9 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/_notes/nipraxis_spring_22.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/pages/foo.Rmd"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
+                data-placement="left">.Rmd</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -160,11 +165,11 @@
         aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
     <div class="dropdown-buttons sourcebuttons">
         <a class="repository-button"
-            href="https://github.com/nipraxis/nipraxis.github.io"><button type="button" class="btn btn-secondary topbarbtn"
+            href="https://github.com/nipraxis/textbook"><button type="button" class="btn btn-secondary topbarbtn"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/nipraxis/nipraxis.github.io/issues/new?title=Issue%20on%20page%20%2F_notes/nipraxis_spring_22.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/nipraxis/textbook/issues/new?title=Issue%20on%20page%20%2Fpages/foo.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -180,44 +185,38 @@
 
             <!-- Launch buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/nipraxis/textbook/main?urlpath=tree/pages/foo.Rmd"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        <a class="jupyterhub-button" href="https://hub.nipraxis.org/hub/user-redirect/git-pull?repo=https://github.com/nipraxis/textbook&urlpath=tree/textbook/pages/foo.Rmd&branch=main"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
+                data-placement="left"><img class="jupyterhub-button-logo"
+                    src="../_static/images/logo_jupyterhub.svg"
+                    alt="Interact on JupyterHub">JupyterHub</button></a>
+        
+        
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
         </div>
 
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-class">
-   The class
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-team">
-   The team
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#prerequisites">
-   Prerequisites
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#commitment">
-   Commitment
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#schedule">
-   Schedule
-  </a>
- </li>
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -226,96 +225,32 @@
         
               <div>
                 
-  <section id="theory-and-practice-of-brain-imaging">
-<h1>Theory and practice of brain imaging<a class="headerlink" href="#theory-and-practice-of-brain-imaging" title="Permalink to this headline">¶</a></h1>
-<section id="the-class">
-<h2>The class<a class="headerlink" href="#the-class" title="Permalink to this headline">¶</a></h2>
-<p>This is an online, but mostly live class on the theory and practice of brain
-imaging.</p>
-<p>In particular, this is a full pilot for a course that will run in the Fall of
-2022.  Expect the pilot course to be a little rough round the edges, but
-otherwise complete and coherent.</p>
-<p>In order to work productively in imaging, you will need to be able to read and
-write simple code to manipulate images, move and modify files, and run analysis
-steps.  You will need code.</p>
-<p>But modern programming languages, such as Python, are not just an additional
-skill that you will need for intermediate and advanced work.  They are
-— languages — in which you can express and explore the fundamental <em>ideas</em> that
-lie behind the analysis.   These are ideas in signal processing, image
-processing, and, most obviously, in statistics.  This course is not designed in
-order for you to <em>learn to code</em>, it is designed so that you use <em>code to
-learn</em>.</p>
-<p>You may be able to do your work with code, and explain it, but your results
-will be full of error unless you organize your work carefully, and you can
-collaborate with others.  We will teach you this organization and collaboration
-so you can work more effectively and productively with your mentors and peers.
-Along the way, you will find you have all the tools you need to do accurate,
-reproducible research.  Collaboration and reproducibility are very close ideas.</p>
-<p>Lastly, we will teach you to engage with your tools.  Just as you collaborate with your peers to do your research, so you will learn to collaborate with your peers who are building and maintaining the code you use.  We will teach you to become an owner and contributor to the common tools that we use.   By contributing, you will help your field, and you will learn from others how to use code more effectively and to do a wider range of work.</p>
-</section>
-<section id="the-team">
-<h2>The team<a class="headerlink" href="#the-team" title="Permalink to this headline">¶</a></h2>
-<p>Your teachers are themselves researchers in brain imaging, and contributors to brain imaging tools.  Between us, we have many decades of experience in teaching brain imaging, and in brain imaging research.  The team are:</p>
-<ul class="simple">
-<li><p>Matthew Brett</p></li>
-<li><p>Chris Markiewicz</p></li>
-<li><p>Oscar Estaban</p></li>
-<li><p>Zvi Baratz</p></li>
-</ul>
-</section>
-<section id="prerequisites">
-<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
-<p>You should know some very basic programming in any language. In particular, we
-will expect you to know what variables and <a class="reference external" href="https://en.wikipedia.org/wiki/For_loop">for loops</a> are, and how to call
-functions.   That said, if you are prepared to catch up as you go, and interact
-with us, your teachers, you may be able to get away without any background
-using code.</p>
-<p>We will be teaching in Python, but we are expecting that many of you will never
-have used Python before.</p>
-<p>You will find the course easier if you have done some brain imaging analysis
-before, but that is not a requirement.</p>
-</section>
-<section id="commitment">
-<h2>Commitment<a class="headerlink" href="#commitment" title="Permalink to this headline">¶</a></h2>
-<p>We ask you to commit yourself to:</p>
-<ul class="simple">
-<li><p>8 weeks, from March through mid-May 2022.</p></li>
-<li><p>1 hour per week of independent study, either reading or videos.</p></li>
-<li><p>Two 2 hour live classes on Zoom</p></li>
-<li><p>1-2 hours per week of homework / group work.</p></li>
-</ul>
-<p>That’s 6-7 hours per week for 8 weeks.</p>
-</section>
-<section id="schedule">
-<h2>Schedule<a class="headerlink" href="#schedule" title="Permalink to this headline">¶</a></h2>
-<p>This is the preliminary schedule for the 16 live classes.</p>
-<ol class="simple">
-<li><p>Introduction to Python.  What is an image?</p></li>
-<li><p>The Jupyter Notebook.  Numpy.</p></li>
-<li><p>Images, arrays, and plotting.</p></li>
-<li><p>Arrays in three and four dimensions.</p></li>
-<li><p>Arrays with four dimensions and time series.</p></li>
-<li><p>Python modules and scripts.  The text editor.</p></li>
-<li><p>Version control and collaboration.</p></li>
-<li><p>Outlier detection.  Testing.</p></li>
-<li><p>Correlation and regression. The general linear model.</p></li>
-<li><p>T tests.  Analysis of variance</p></li>
-<li><p>Multiple comparison correction</p></li>
-<li><p>Convolution and the hemodynamic response.</p></li>
-<li><p>Interpolation and slice timing.</p></li>
-<li><p>Optimization and image registration.</p></li>
-<li><p>Affine transforms.  Cross-modality registration.</p></li>
-<li><p>Cross-subject registration.</p></li>
-</ol>
-</section>
+  <section id="inserting-values-into-strings">
+<h1>Inserting values into strings<a class="headerlink" href="#inserting-values-into-strings" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;Here is a </span><span class="si">{}</span><span class="s2"> floating point number&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mf">3.33333</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Here is a 3.33333 floating point number&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can do more complex formatting of numbers and strings using formatting
+options within the curly brackets <code class="docutils literal notranslate"><span class="pre">{</span></code> — <code class="docutils literal notranslate"><span class="pre">}</span></code> see the documentation on <a class="reference external" href="https://docs.python.org/3/library/string.html#format-examples">curly
+brace string
+formatting</a>.</p>
 </section>
 
     <script type="text/x-thebe-config">
     {
         requestKernel: true,
         binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
-            ref: "master",
+            repo: "nipraxis/textbook",
+            ref: "main",
         },
         codeMirrorConfig: {
             theme: "abcdef",
@@ -323,7 +258,7 @@ before, but that is not a requirement.</p>
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./_notes"
+            path: "./pages"
         },
         predefinedOutput: true
     }
