@@ -4,12 +4,15 @@
 
 In this course, we teach two things:
 
+1. how to work with functional MRI data.
 1. functional MRI methods;
-2. how to work with functional MRI data.
 
-The first topic is obvious and familiar to those of you working in functional FMRI.  Of course you need to know how the methods work.  But what is this second thing — *how to work with* functional MRI data?   Isn't this the same thing?  Is it really something specific that we have to think about?  And if it is, isn't that an advanced topic, after we know the methods?
+The second topic is obvious and familiar to those of you working in functional
+FMRI.  Of course you need to know how the methods work.  But what is this
+first thing — *how to work with* functional MRI data?   Isn't this the same
+thing?  Why is it *first*?  Doesn't theory come before practice?
 
-To answer that question, we need to talk about *the problem*.
+To answer those questions, we need to talk about *the problem*.
 
 ## The problem
 
@@ -40,7 +43,7 @@ That makes us ask — what is the typical practice of a neuroimaging researcher?
 
 ## Typical practice
 
-Even in good institutions, we have seen that the great difficulties in learning and doing imaging make it common to fall into this patter.
+Even in good institutions, we have seen that the great difficulties in learning and doing imaging make it common to fall into this pattern.
 
 * The practitioner **learns some of some of the areas** above, but at
   a superficial "makes-sense" level.  The "makes-sense" level is the level at
@@ -93,7 +96,7 @@ It will be hard to collaborate, because it is hard to explain your process to yo
 
 # Like science, but not science
 
-The problem then, is that the *process* of analysis can make it very difficult to do *science*.  That's a big claim, and one that begs the question, what is science?.
+The problem then, is that the *process* of analysis can make it very difficult to do *science*.  That's a big claim, and one that begs the question, "What is science?"
 
 [Richard Feynman](https://en.wikipedia.org/wiki/Richard_Feynman) was a Nobel-laureate in theoretical physics, and a famous teacher and writer. He thought a lot about the nature of science.  In a famous talk, called "What is Science"  {cite}`feynman1969science`, he wrote:
 
@@ -196,16 +199,22 @@ and easy leads to stagnation.
 
 ![](../images/simple_easy_velocity.png)
 
-## The plan returns
+## Practice and theory
 
 As you remember, we plan to teach you two things:
 
-1. functional MRI methods;
-2. how to work with functional MRI data.
+1. how to work with functional MRI data.
+2. functional MRI methods;
 
-We want to do that in way that will make your work *simple*.  We will do that
-by using Feynman's idea of understanding by building. That will not be *easy*,
-at first, but we hope you will find, rather quickly, that the basic ideas will be clearer — and you will have better tools to do your work.
+Why is *practice* before *theory*?   Because correct *practice* helps you
+think clearly.  The tools that you will use for practice include *code*,
+a rich language for understanding *theory*.
+
+Good practice is the root of sound understanding, so we will teach you
+practice to make your work *simple*.  We will do that by using Feynman's idea
+of understanding by building. That will not be *easy*, at first, but we hope
+you will find, rather quickly, that the basic ideas will be clearer — and you
+will have better tools to do your work.
 
 To get there, we start with:
 
