@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Numpy arange &#8212; Practical Neuroimaging</title>
+    <title>String literals in Python &#8212; Practical Neuroimaging</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -53,8 +53,6 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Vector and matrix dot products, “np.outer”" href="dot_outer.html" />
-    <link rel="prev" title="Testing for near equality with “allclose”" href="allclose.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -342,7 +340,7 @@ const thebe_selector_output = ".output, .cell_output"
   NumPy and Matplotlib: reshape, dot products, lines and subplots
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="methods_vs_functions.html">
    Methods vs functions in NumPy
@@ -358,8 +356,8 @@ const thebe_selector_output = ".output, .cell_output"
    Testing for near equality with “allclose”
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="arange.html">
    Numpy arange
   </a>
  </li>
@@ -429,7 +427,7 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/pages/arange.Rmd"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/pages/string_literals.Rmd"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.Rmd</button></a>
         <!-- Download PDF via print -->
@@ -449,7 +447,7 @@ const thebe_selector_output = ".output, .cell_output"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/nipraxis/textbook/issues/new?title=Issue%20on%20page%20%2Fpages/arange.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/nipraxis/textbook/issues/new?title=Issue%20on%20page%20%2Fpages/string_literals.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -470,14 +468,14 @@ const thebe_selector_output = ".output, .cell_output"
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/nipraxis/textbook/main?urlpath=tree/pages/arange.Rmd"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/nipraxis/textbook/main?urlpath=tree/pages/string_literals.Rmd"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../_static/images/logo_binder.svg"
                     alt="Interact on binder">Binder</button></a>
         
         
-        <a class="jupyterhub-button" href="https://hub.nipraxis.org/hub/user-redirect/git-pull?repo=https://github.com/nipraxis/textbook&urlpath=tree/textbook/pages/arange.Rmd&branch=main"><button type="button"
+        <a class="jupyterhub-button" href="https://hub.nipraxis.org/hub/user-redirect/git-pull?repo=https://github.com/nipraxis/textbook&urlpath=tree/textbook/pages/string_literals.Rmd&branch=main"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
                 data-placement="left"><img class="jupyterhub-button-logo"
                     src="../_static/images/logo_jupyterhub.svg"
@@ -503,7 +501,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Numpy arange</h1>
+                <h1>String literals in Python</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -514,57 +512,135 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="numpy-arange">
-<h1>Numpy arange<a class="headerlink" href="#numpy-arange" title="Permalink to this headline">¶</a></h1>
-<p><code class="docutils literal notranslate"><span class="pre">arange</span></code> in NumPy is very like the Python Range callable with two
-important differences:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">arange</span></code> returns an array rather than a <code class="docutils literal notranslate"><span class="pre">range</span></code> object;</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">arange</span></code> arguments can be floating point values.</p></li>
-</ul>
+  <div class="tex2jax_ignore mathjax_ignore section" id="string-literals-in-python">
+<h1>String literals in Python<a class="headerlink" href="#string-literals-in-python" title="Permalink to this headline">¶</a></h1>
+<p>A string literal is where you specify the contents of a string in a program.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="s1">&#39;A string&#39;</span>
 </pre></div>
 </div>
 </div>
 </div>
+<p>Here ‘A string’ is a string literal.  The variable <code class="docutils literal notranslate"><span class="pre">a</span></code> is a string variable,
+or, better put in Python, a variable that points to a string.</p>
+<p>String literals can use single or double quote delimiters.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="s1">&#39;A string&#39;</span>  <span class="c1"># string literal with single quotes</span>
+<span class="n">b</span> <span class="o">=</span> <span class="s2">&quot;A string&quot;</span>  <span class="c1"># string literal with double quotes</span>
+<span class="n">b</span> <span class="o">==</span> <span class="n">a</span>  <span class="c1"># there is no difference between these strings</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 4,  6,  8, 10])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
 </pre></div>
 </div>
 </div>
 </div>
+<p>Literal strings with single quote delimiters can use double quotes inside them
+without any extra work.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Single quoted string with &quot; is no problem&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 4. ,  4.5,  5. ,  5.5,  6. ,  6.5,  7. ,  7.5,  8. ,  8.5,  9. ,
-        9.5, 10. , 10.5])
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Single quoted string with &quot; is no problem
 </pre></div>
 </div>
 </div>
 </div>
-<p>Because <code class="docutils literal notranslate"><span class="pre">arange</span></code> returns arrays, you can use NumPy element-wise operations
-to multiply by the step size and add a start value.  This is one way to create
-equally spaced vectors (<code class="docutils literal notranslate"><span class="pre">np.linspace</span></code> is another):</p>
+<p>If you need an actual single quote character inside a literal string delimited
+by single quotes, you can use the backslash character before the single quote,
+to tell Python not to terminate the string:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.5</span> <span class="o">+</span> <span class="mi">4</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Single quoted string containing </span><span class="se">\&#39;</span><span class="s1"> is OK with backslash&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([4. , 4.5, 5. , 5.5, 6. , 6.5, 7. , 7.5, 8. , 8.5])
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Single quoted string containing &#39; is OK with backslash
+</pre></div>
+</div>
+</div>
+</div>
+<p>Likewise for double quotes:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Double quoted string with &#39; is no problem&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Double quoted string containing </span><span class="se">\&quot;</span><span class="s2"> is OK with backslash&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Double quoted string with &#39; is no problem
+Double quoted string containing &quot; is OK with backslash
+</pre></div>
+</div>
+</div>
+</div>
+<p>Some characters preceded by a backslash have special meaning.  For example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Backslash before &quot;n&quot;, as in </span><span class="se">\n</span><span class="s1">, inserts a new line character&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Backslash before &quot;n&quot;, as in 
+, inserts a new line character
+</pre></div>
+</div>
+</div>
+</div>
+<p>If you do not want the backslash to have this special meaning, prefix your
+string literal with ‘r’, meaning “raw”:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Prefixed by &quot;r&quot; the \n no longer inserts a new line&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Prefixed by &quot;r&quot; the \n no longer inserts a new line
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can use triple quotes to enclose strings with more than one line:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;This string literal</span>
+<span class="s1">has more than one</span>
+<span class="s1">line&#39;&#39;&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>This string literal
+has more than one
+line
+</pre></div>
+</div>
+</div>
+</div>
+<p>Triple quotes can use single or double quote marks:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;This string literal</span>
+<span class="s2">also has more than one</span>
+<span class="s2">line&quot;&quot;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>This string literal
+also has more than one
+line
 </pre></div>
 </div>
 </div>
@@ -595,21 +671,7 @@ equally spaced vectors (<code class="docutils literal notranslate"><span class="
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="allclose.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Testing for near equality with “allclose”</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="dot_outer.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Vector and matrix dot products, “np.outer”</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
+<div class='prev-next-area'>
 </div>
             
         </div>

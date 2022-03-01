@@ -54,7 +54,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Slicing with boolean vectors" href="slicing_with_booleans.html" />
-    <link rel="prev" title="Brisk introduction to Python" href="brisk_python.html" />
+    <link rel="prev" title="List comprehensions" href="list_comprehensions.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -124,6 +124,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="brisk_python.html">
    Brisk introduction to Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="list_comprehensions.html">
+   List comprehensions
   </a>
  </li>
  <li class="toctree-l1 current active">
@@ -324,6 +329,11 @@ const thebe_selector_output = ".output, .cell_output"
     </span>
    </code>
    for testing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="coding_style.html">
+   Python coding style
   </a>
  </li>
 </ul>
@@ -554,7 +564,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7fafa8196e80&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7ff7db7bbe80&gt;
 </pre></div>
 </div>
 <img alt="../_images/arrays_and_images_5_1.png" src="../_images/arrays_and_images_5_1.png" />
@@ -573,7 +583,7 @@ neighbor interpolation</a> instead of linear interpolation:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7fafa607eb20&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7ff7d96a3ac0&gt;
 </pre></div>
 </div>
 <img alt="../_images/arrays_and_images_7_1.png" src="../_images/arrays_and_images_7_1.png" />
@@ -594,7 +604,7 @@ to show the colormap:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7fafa60235e0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7ff7d95d1df0&gt;
 </pre></div>
 </div>
 <img alt="../_images/arrays_and_images_9_1.png" src="../_images/arrays_and_images_9_1.png" />
@@ -610,7 +620,7 @@ to show the colormap:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7fafa5ef7f40&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7ff7d95290d0&gt;
 </pre></div>
 </div>
 <img alt="../_images/arrays_and_images_11_1.png" src="../_images/arrays_and_images_11_1.png" />
@@ -637,7 +647,7 @@ the 9th row of the array.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fafa5e91370&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7ff7d94b71c0&gt;]
 </pre></div>
 </div>
 <img alt="../_images/arrays_and_images_15_1.png" src="../_images/arrays_and_images_15_1.png" />
@@ -676,7 +686,7 @@ of flipping the rows and columns (in 2D):</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7fafa5df2af0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7ff7d9417d60&gt;
 </pre></div>
 </div>
 <img alt="../_images/arrays_and_images_18_1.png" src="../_images/arrays_and_images_18_1.png" />
@@ -796,7 +806,7 @@ many bins you want with the <code class="docutils literal notranslate"><span cla
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7fafa5c604f0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7ff7d92834f0&gt;
 </pre></div>
 </div>
 <img alt="../_images/arrays_and_images_29_1.png" src="../_images/arrays_and_images_29_1.png" />
@@ -867,7 +877,7 @@ binarizing the image at a threshold (of 50 in this case):</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7fafa5bd60a0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7ff7d91fc070&gt;
 </pre></div>
 </div>
 <img alt="../_images/arrays_and_images_35_1.png" src="../_images/arrays_and_images_35_1.png" />
@@ -885,7 +895,7 @@ that we want to the top 4 rows, and the last 5 columns:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7fafa5b40310&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7ff7d9167310&gt;
 </pre></div>
 </div>
 <img alt="../_images/arrays_and_images_37_1.png" src="../_images/arrays_and_images_37_1.png" />
@@ -918,11 +928,11 @@ that we want to the top 4 rows, and the last 5 columns:</p>
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="brisk_python.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="list_comprehensions.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Brisk introduction to Python</p>
+            <p class="prev-next-title">List comprehensions</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="slicing_with_booleans.html" title="next page">
