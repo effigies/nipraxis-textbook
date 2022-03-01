@@ -4,21 +4,22 @@
 
 In this course, we teach two things:
 
-1. how to work with functional MRI data.
-1. functional MRI methods;
+1. Working with brain imaging data.
+2. Principles of analysis methods.
 
-The second topic is obvious and familiar to those of you working in functional
-FMRI.  Of course you need to know how the methods work.  But what is this
-first thing — *how to work with* functional MRI data?   Isn't this the same
-thing?  Why is it *first*?  Doesn't theory come before practice?
+The second topic is obvious and familiar to those of you working in brain
+imaging.  Of course you need to know how the principles of the analysis.  But
+what is this first thing — *working with* brain imaging data?   Isn't this
+the same thing?  Why is it *first*?  Doesn't theory come before practice?
 
 To answer those questions, we need to talk about *the problem*.
 
 ## The problem
 
-Functional MRI is really hard to learn and teach.  For those of us who have
+Brain imaging analysis is hard to learn and teach.  For those of us who have
 tried to learn it, and teach it, this won't be controversial — this is our
-experience.   But some of you are starting to learn, or starting to teach, and you may need to be convinced.
+experience.   But some of you are starting to learn, or starting to teach, and
+you may need to be convinced.
 
 The difficulty is not surprising.  At a superficial level, the neuroimaging
 researcher needs more than a passing knowledge of many fields, from many
@@ -66,12 +67,13 @@ Even in good institutions, we have seen that the great difficulties in learning 
   care, it can be very difficult to replicate your own analysis, and all but
   impossible to replicate an analysis by someone else.  This confusion is
   a poison to clear thought.  [Professor Robin
-  Murray](https://www.kcl.ac.uk/people/professor-sir-robin-murray) once
-  suggested, in a talk on the rather trivial contribution of FMRI research to
-  understanding schizophrenia, that the frontal lobes of FMRI researchers were
-  so occupied by the difficulties of analysis, that they not longer had the
-  capacity to think of a hypothesis.  The collective groan and laugh from the
-  audience was good evidence of its painful truth.
+  Murray](https://www.kcl.ac.uk/people/professor-sir-robin-murray) gave a [talk
+  in 2001](http://www.mattababy.org/~belmonte/Talks/2001_London/speak.html)
+  called "Should psychiatry take fMRI research seriously?". His answer to the
+  question in his title was more or less "no", or at least, "not yet".  Among
+  many painful, wise and funny remarks, he wondered aloud whether the frontal
+  lobes of researchers in the field were so occupied by the difficulties of
+  analysis, that they no longer had the capacity to think of a hypothesis.
 
 ## The tyranny of the typical
 
@@ -106,6 +108,8 @@ The problem then, is that the *process* of analysis can make it very difficult t
 > ...
 > Science is the belief in the ignorance of experts
 
+We will come back to this idea again, of science and not-science.
+
 The Royal Society of London was founded on the same idea.  The motto of the Royal Society is "Nullius in Verba", often translated as "Take no-one's word for it".
 
 ![](../images/nullius_in_verba.jpg)
@@ -118,7 +122,7 @@ ability to question your assumptions and your teachers.  In imaging that can
 be very difficult, because of the confusion from the process of analysis, and
 because of the huge range of subjects you need to understand.
 
-# Ubiquity of error
+# The ubiquity of error
 
 We would not have to worry, if, despite our disorganized process, we rarely
 made mistakes.  But, in fact, error is invariable, pervasive in the
@@ -141,6 +145,42 @@ a paper on computation, unless the authors had given the readers the ability to 
 > complete set of instructions which generated the figures"
 > {cite}`buckheit1995wavelab`, also quoted in the [Wavelab front
 > page](http://statweb.stanford.edu/~wavelab)
+
+Feynman cared greatly about the importance of transparency in describing your
+work. For him, it was the difference between science, and stuff that looks like
+science. He gave a famous talk about this, called "Cargo Cult Science"
+{cite}`feynman1974cargo`.  He gives a few examples of apparently scientific
+studies where the results don't seem to hold up in practice.
+
+> I think the educational and psychological studies I mentioned are examples of
+> what I would like to call cargo cult science. In the South Seas there is a
+> cargo cult of people. During the war they saw airplanes land with lots of
+> good materials, and they want the same thing to happen now. So they've
+> arranged to imitate things like runways, to put fires along the sides of the
+> runways, to make a wooden hut for a man to sit in, with two wooden pieces on
+> his head like headphones and bars of bamboo sticking out like antennas —--
+> he's the controller -- and they wait for the airplanes to land.  They're
+> doing everything right. The form is perfect. It looks exactly the way it
+> looked before. But it doesn't work. No airplanes land. So I call these things
+> cargo cult science, because they follow all the apparent precepts and forms
+> of scientific investigation, but they're missing something essential, because
+> the planes don't land.
+
+What is the thing that distinguishes between real science from cargo cult
+science?
+
+> It's a kind of scientific integrity, a principle of scientific thought that
+> corresponds to a kind of utter honesty — a kind of leaning over backwards.
+> [...] the idea is to give all of the information to help others to judge the
+> value of your contribution; not just the information that leads to judgement
+> in one particular direction or another. [...] And, although you may gain some
+> temporary fame and excitement, you will not gain a good reputation as a
+> scientist if you haven't tried to be very careful in this kind of work. And
+> it's this type of integrity, this kind of care not to fool yourself, that is
+> missing to a large extent in much of the research in cargo cult science.
+
+This is the idea behind reproducibility; it is your true and essential work as
+a scientist to make it simple for others to replicate and check your work.
 
 But — this is not an easy path to take.  If you want to make your work
 reproducible, it has to be organized *as you do the work*.  As we said in
@@ -168,11 +208,11 @@ We have found this to be a profound truth.   If you cannot imagine how you would
 We take that truth seriously here.  We will show you how to build
 a simple-as-possible analysis of neuroimaging data *from the ground up*, using
 basic building blocks from general scientific libraries.  Our idea is this: if
-there is some terrible disaster, and, for some reason, all the current FMRI
-analysis packages are lost, then you will not be lost.  It would be
-inconvenient, and time-consuming, but you would say — "It's OK, I know what
-the analysis needs to do, I'll build my own, and I'll get others to help me do
-it".  Why?  Because you can create it, and you do understand it.
+there is some terrible disaster, and, for some reason, all the current brain
+imaging analysis packages are lost, then you will not be lost.  It would be
+inconvenient, and time-consuming, but you would say — "It's OK, I know what the
+analysis needs to do, I'll build my own, and I'll get others to help me do it".
+Why?  Because you can create it, and you do understand it.
 
 Building teaches understanding, but we also care about making our work clear, and efficient.  We want to get better and better at doing our analysis, and learning from the results.
 
@@ -203,8 +243,8 @@ and easy leads to stagnation.
 
 As you remember, we plan to teach you two things:
 
-1. how to work with functional MRI data.
-2. functional MRI methods;
+1. Working with brain imaging data.
+2. Principles of analysis methods.
 
 Why is *practice* before *theory*?   Because correct *practice* helps you
 think clearly.  The tools that you will use for practice include *code*,
