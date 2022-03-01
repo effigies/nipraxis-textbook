@@ -158,6 +158,16 @@ const thebe_selector_output = ".output, .cell_output"
    Otsu’s method for binarizing images
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="numpy_random.html">
+   Random numbers with
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     np.random
+    </span>
+   </code>
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -596,7 +606,7 @@ this regressor in Modeling a single voxel:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f8fe4f82a60&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f418652edc0&gt;]
 </pre></div>
 </div>
 <img alt="../_images/whole_image_statistics_3_1.png" src="../_images/whole_image_statistics_3_1.png" />
@@ -636,7 +646,7 @@ this regressor in Modeling a single voxel:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7f8fafa4b430&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7f418444b460&gt;
 </pre></div>
 </div>
 <img alt="../_images/whole_image_statistics_9_1.png" src="../_images/whole_image_statistics_9_1.png" />
@@ -827,7 +837,7 @@ the t statistic, one for each voxel:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_287342/4169539846.py:1: RuntimeWarning: invalid value encountered in true_divide
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_291637/4169539846.py:1: RuntimeWarning: invalid value encountered in true_divide
   t = top_of_t / np.sqrt(sigma_2 * c_b_cov)
 </pre></div>
 </div>
@@ -850,7 +860,7 @@ statistic back into the correct voxel position:</p>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(64, 64, 30)
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7f8fafa46e20&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7f41843c8e50&gt;
 </pre></div>
 </div>
 <img alt="../_images/whole_image_statistics_32_2.png" src="../_images/whole_image_statistics_32_2.png" />
@@ -867,7 +877,7 @@ denominator of the t statistic are both 0.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_287342/2135315712.py:1: RuntimeWarning: invalid value encountered in true_divide
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_291637/2135315712.py:1: RuntimeWarning: invalid value encountered in true_divide
   np.array(0) / 0
 </pre></div>
 </div>
@@ -1042,7 +1052,7 @@ mask as an index on the left hand side:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7f8faf9db2b0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7f418435d160&gt;
 </pre></div>
 </div>
 <img alt="../_images/whole_image_statistics_52_1.png" src="../_images/whole_image_statistics_52_1.png" />
@@ -1065,7 +1075,7 @@ mask as an index on the left hand side:</p>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(21604,)
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7f8f6efe5c70&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7f4143992250&gt;
 </pre></div>
 </div>
 <img alt="../_images/whole_image_statistics_54_2.png" src="../_images/whole_image_statistics_54_2.png" />
@@ -1102,7 +1112,7 @@ surviving correction have True, other voxels have False:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7f8faf9b9460&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7f418433c1c0&gt;
 </pre></div>
 </div>
 <img alt="../_images/whole_image_statistics_58_1.png" src="../_images/whole_image_statistics_58_1.png" />
@@ -1124,7 +1134,7 @@ tests are independent:</p>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.31438622477319e-06
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7f8faf924d60&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7f41842b3160&gt;
 </pre></div>
 </div>
 <img alt="../_images/whole_image_statistics_60_2.png" src="../_images/whole_image_statistics_60_2.png" />

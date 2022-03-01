@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Where does Python look for modules? &#8212; Practical Neuroimaging</title>
+    <title>Random numbers with np.random &#8212; Practical Neuroimaging</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -53,8 +53,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Using assert for testing" href="assert.html" />
-    <link rel="prev" title="Making and breaking file paths in Python" href="path_manipulation.html" />
+    <link rel="next" title="Working with four dimensional images, masks and functions" href="intro_to_4d.html" />
+    <link rel="prev" title="Otsu’s method for binarizing images" href="otsu_threshold.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -115,7 +115,7 @@ const thebe_selector_output = ".output, .cell_output"
   Images and code and images
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="what_is_an_image.html">
    What is an image?
@@ -156,8 +156,8 @@ const thebe_selector_output = ".output, .cell_output"
    Otsu’s method for binarizing images
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="numpy_random.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Random numbers with
    <code class="docutils literal notranslate">
     <span class="pre">
@@ -314,7 +314,7 @@ const thebe_selector_output = ".output, .cell_output"
   Code organization and collaboration
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="on_modules.html">
    Modules and scripts
@@ -325,8 +325,8 @@ const thebe_selector_output = ".output, .cell_output"
    Making and breaking file paths in Python
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="sys_path.html">
    Where does Python look for modules?
   </a>
  </li>
@@ -439,7 +439,7 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/pages/sys_path.Rmd"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/pages/numpy_random.Rmd"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.Rmd</button></a>
         <!-- Download PDF via print -->
@@ -459,7 +459,7 @@ const thebe_selector_output = ".output, .cell_output"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/nipraxis/textbook/issues/new?title=Issue%20on%20page%20%2Fpages/sys_path.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/nipraxis/textbook/issues/new?title=Issue%20on%20page%20%2Fpages/numpy_random.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -480,14 +480,14 @@ const thebe_selector_output = ".output, .cell_output"
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/nipraxis/textbook/main?urlpath=tree/pages/sys_path.Rmd"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/nipraxis/textbook/main?urlpath=tree/pages/numpy_random.Rmd"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../_static/images/logo_binder.svg"
                     alt="Interact on binder">Binder</button></a>
         
         
-        <a class="jupyterhub-button" href="https://hub.nipraxis.org/hub/user-redirect/git-pull?repo=https://github.com/nipraxis/textbook&urlpath=tree/textbook/pages/sys_path.Rmd&branch=main"><button type="button"
+        <a class="jupyterhub-button" href="https://hub.nipraxis.org/hub/user-redirect/git-pull?repo=https://github.com/nipraxis/textbook&urlpath=tree/textbook/pages/numpy_random.Rmd&branch=main"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
                 data-placement="left"><img class="jupyterhub-button-logo"
                     src="../_static/images/logo_jupyterhub.svg"
@@ -511,9 +511,19 @@ const thebe_selector_output = ".output, .cell_output"
             </div>
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#python-looks-for-modules-in-sys-path">
-   Python looks for modules in “sys.path”
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Random numbers with
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     np.random
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#making-random-numbers-predictable">
+   Making random numbers predictable
   </a>
  </li>
 </ul>
@@ -526,7 +536,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Where does Python look for modules?</h1>
+                <h1>Random numbers with np.random</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -536,9 +546,19 @@ const thebe_selector_output = ".output, .cell_output"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#python-looks-for-modules-in-sys-path">
-   Python looks for modules in “sys.path”
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Random numbers with
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     np.random
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#making-random-numbers-predictable">
+   Making random numbers predictable
   </a>
  </li>
 </ul>
@@ -550,114 +570,179 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="where-does-python-look-for-modules">
-<h1>Where does Python look for modules?<a class="headerlink" href="#where-does-python-look-for-modules" title="Permalink to this headline">¶</a></h1>
-<p>See:</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://docs.python.org/3.5/library/sys.html#sys.path">Python docs on sys.path</a>;</p></li>
-<li><p><a class="reference external" href="https://pymotw.com/3/sys/imports.html#import-path">Python Module of the Week on: Import Path</a>.</p></li>
-</ul>
-<p>Let’s say we have written a Python module and saved it as <code class="docutils literal notranslate"><span class="pre">a_module.py</span></code>, in
-a directory called <code class="docutils literal notranslate"><span class="pre">code</span></code>.</p>
-<p>We also have a script called <code class="docutils literal notranslate"><span class="pre">a_script.py</span></code> in a directory called
-<code class="docutils literal notranslate"><span class="pre">scripts</span></code>.</p>
-<p>We want to be able to <code class="docutils literal notranslate"><span class="pre">import</span></code> the code in <code class="docutils literal notranslate"><span class="pre">a_module.py</span></code> to use in
-<code class="docutils literal notranslate"><span class="pre">a_script.py</span></code>.  So, we want to be able to put his line in
-<code class="docutils literal notranslate"><span class="pre">a_script.py</span></code>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">a_module</span>
+  <div class="tex2jax_ignore mathjax_ignore section" id="random-numbers-with-np-random">
+<h1>Random numbers with <code class="docutils literal notranslate"><span class="pre">np.random</span></code><a class="headerlink" href="#random-numbers-with-np-random" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#: standard imports</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="c1"># print arrays to 4 decimal places</span>
+<span class="n">np</span><span class="o">.</span><span class="n">set_printoptions</span><span class="p">(</span><span class="n">precision</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">suppress</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>The module and script might look like this:</p>
-<!-- $ rm -rf code scripts another_dir
-$ mkdir code scripts
- -->
-<p>At the moment, <code class="docutils literal notranslate"><span class="pre">a_script.py</span></code> will fail with:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python3 scripts/a_script.py
-Traceback (most recent call last):
-  File &quot;scripts/a_script.py&quot;, line 1, in &lt;module&gt;
-    import a_module
-ModuleNotFoundError: No module named &#39;a_module&#39;
+</div>
+</div>
+<p>We often need random numbers, for tests and for taking random samples, and for
+other things. <code class="docutils literal notranslate"><span class="pre">np.random</span></code> is a submodule within numpy:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>When Python hits the line <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">a_module</span></code>, it tries to find a package or a
-module called <code class="docutils literal notranslate"><span class="pre">a_module</span></code>.  A package is a directory containing modules, but
-we will only consider modules for now.  A module is a file with a matching
-extension, such as <code class="docutils literal notranslate"><span class="pre">.py</span></code>.  So, Python is looking for a file <code class="docutils literal notranslate"><span class="pre">a_module.py</span></code>,
-and not finding it.</p>
-<p>You will see the same effect at the interactive Python console, or in
-IPython:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-<span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">a_module</span>
-<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
-  <span class="n">File</span> <span class="s2">&quot;&lt;input&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">ModuleNotFoundError</span><span class="p">:</span> <span class="n">No</span> <span class="n">module</span> <span class="n">named</span> <span class="s1">&#39;a_module&#39;</span>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>module
 </pre></div>
 </div>
-<div class="section" id="python-looks-for-modules-in-sys-path">
-<h2>Python looks for modules in “sys.path”<a class="headerlink" href="#python-looks-for-modules-in-sys-path" title="Permalink to this headline">¶</a></h2>
-<p>Python has a simple algorithm for finding a module with a given name, such as
-<code class="docutils literal notranslate"><span class="pre">a_module</span></code>.  It looks for a file called <code class="docutils literal notranslate"><span class="pre">a_module.py</span></code> in the directories
-listed in the variable <code class="docutils literal notranslate"><span class="pre">sys.path</span></code>.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-&gt;&gt;&gt; import sys
-&gt;&gt;&gt; type(sys.path)
-&lt;class &#39;list&#39;&gt;
-&gt;&gt;&gt; for path in sys.path:
-...     print(path)
-... 
-/Volumes/zorg/mb312/dev_trees/psych-214-fall-2016/sphinxext
-/usr/local/opt/python@3.8/Frameworks/Python.framework/Versions/3.8/lib/python38.zip
-/usr/local/opt/python@3.8/Frameworks/Python.framework/Versions/3.8/lib/python3.8
-/usr/local/opt/python@3.8/Frameworks/Python.framework/Versions/3.8/lib/python3.8/lib-dynload
-/Volumes/zorg/mb312/.virtualenvs/spring-2022/lib/python3.8/site-packages
+</div>
+</div>
+<p>It has a set of functions for returning random numbers of various sorts.  For
+example, to return a single random number from the default normal distribution
+(mean 0, variance 1):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>The <code class="docutils literal notranslate"><span class="pre">a_module.py</span></code> file is in the <code class="docutils literal notranslate"><span class="pre">code</span></code> directory, and this directory is
-not in the <code class="docutils literal notranslate"><span class="pre">sys.path</span></code> list.</p>
-<p>Because <code class="docutils literal notranslate"><span class="pre">sys.path</span></code> is just a Python list, like any other, we can make the
-import work by appending the <code class="docutils literal notranslate"><span class="pre">code</span></code> directory to the list.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-<span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">sys</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;code&#39;</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="c1"># Now the import will work</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">a_module</span>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.8799581418921514
 </pre></div>
 </div>
-<p>There are various ways of making sure a directory is always on the Python
-<code class="docutils literal notranslate"><span class="pre">sys.path</span></code> list when you run Python, including:</p>
-<ul class="simple">
-<li><p>put the directory into the contents of the <code class="docutils literal notranslate"><span class="pre">PYTHONPATH</span></code> environment
-variable – Using PYTHONPATH</p></li>
-<li><p>make the module part of an installable package, and install it – see:
-<a class="reference external" href="https://packaging.python.org/distributing">making a Python package</a>.</p></li>
-</ul>
-<p>As a crude hack, you can also put your <code class="docutils literal notranslate"><span class="pre">code</span></code> directory on the Python
-<code class="docutils literal notranslate"><span class="pre">sys.path</span></code> at the top of the files that need it:</p>
-<p>Then:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python3 scripts/a_script_with_hack.py
-Running useful function
+</div>
+</div>
+<p>You can set the mean and variance with the first two input parameters:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Random number from distribution with mean 15, variance 2</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>The simple <code class="docutils literal notranslate"><span class="pre">append</span></code> above will only work when running the script from a
-directory containing the <code class="docutils literal notranslate"><span class="pre">code</span></code> subdirectory.  For example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ mkdir another_dir
-$ cd another_dir
-$ python3 ../scripts/a_script_with_hack.py
-Traceback (most recent call last):
-  File &quot;../scripts/a_script_with_hack.py&quot;, line 4, in &lt;module&gt;
-    import a_module
-ModuleNotFoundError: No module named &#39;a_module&#39;
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>14.19453592402511
 </pre></div>
 </div>
-<p>This is because the directory <code class="docutils literal notranslate"><span class="pre">code</span></code> that we specified is a relative path,
-and therefore Python looks for the <code class="docutils literal notranslate"><span class="pre">code</span></code> directory in the current working
-directory.</p>
-<p>To make the hack work when running the code from any directory, you could use
-some path manipulation on the The “<strong>file</strong>” variable:</p>
-<p>Now the module import does work from <code class="docutils literal notranslate"><span class="pre">another_dir</span></code>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python3 ../scripts/a_script_with_better_hack.py
-Running useful function
+</div>
+</div>
+<p>To return a 8 by 5 array of random numbers from the same distribution:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[15.5552, 14.2816, 12.5154, 14.6937, 12.9654],
+       [11.74  , 14.9075, 17.258 , 13.5635, 14.8271],
+       [13.109 , 12.5119, 17.2194, 16.7543, 13.7262],
+       [15.3759, 15.6337, 12.7158, 11.4463, 13.7951],
+       [12.9976, 15.0879, 13.5647, 15.1787, 17.1064],
+       [15.4146, 14.5454, 13.8576, 16.0054, 13.3021],
+       [18.9006, 14.6246, 16.9254, 15.2097, 11.1099],
+       [14.2857, 11.919 , 17.0965, 12.4311, 14.9998]])
+</pre></div>
+</div>
+</div>
+</div>
+<p>A 5 by 3 array of random numbers from the standard normal distribution with
+mean 1 and variance 1:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[-0.1854,  0.256 ,  0.7299,  0.0843,  0.1967],
+       [ 1.97  , -1.6805, -1.0159, -0.0859,  0.3207],
+       [ 0.2279, -2.248 , -0.0794, -1.6153,  0.1324],
+       [-0.5569,  0.9115, -0.2098, -1.9534,  0.2618],
+       [ 0.2602,  0.7692,  1.0231, -2.3284, -0.0114],
+       [-0.0753, -0.4617,  0.1489, -1.8975, -0.4769],
+       [ 0.2592,  0.3867, -2.7176,  0.4551, -1.0774],
+       [ 0.2062,  0.8768,  1.0076,  0.4759, -0.4679]])
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="making-random-numbers-predictable">
+<h1>Making random numbers predictable<a class="headerlink" href="#making-random-numbers-predictable" title="Permalink to this headline">¶</a></h1>
+<p>Sometimes you want to make sure that the random numbers are predictable, in
+that you will always get the same set of random numbers from a series of calls
+to the <code class="docutils literal notranslate"><span class="pre">numpy.random</span></code> functions.  You can achieve this by giving the random
+numbers a <em>seed</em>.  This is an integer that sets the random number generator
+into a predictable state, such that it will always return the same sequence of
+random numbers from this point:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set the state of the random number generator</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<span class="c1"># One set of random numbers</span>
+<span class="n">first_random_arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="n">first_random_arr</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 0.4967, -0.1383],
+       [ 0.6477,  1.523 ],
+       [-0.2342, -0.2341],
+       [ 1.5792,  0.7674]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Another set</span>
+<span class="n">second_random_arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="n">second_random_arr</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[-0.4695,  0.5426],
+       [-0.4634, -0.4657],
+       [ 0.242 , -1.9133],
+       [-1.7249, -0.5623]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Reset the state of the random number generator</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<span class="c1"># The same as &quot;first_random_arr&quot; above.</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 0.4967, -0.1383],
+       [ 0.6477,  1.523 ],
+       [-0.2342, -0.2341],
+       [ 1.5792,  0.7674]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># The same as &quot;second_random_arr&quot; above.</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[-0.4695,  0.5426],
+       [-0.4634, -0.4657],
+       [ 0.242 , -1.9133],
+       [-1.7249, -0.5623]])
+</pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -687,17 +772,17 @@ Running useful function
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="path_manipulation.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="otsu_threshold.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Making and breaking file paths in Python</p>
+            <p class="prev-next-title">Otsu’s method for binarizing images</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="assert.html" title="next page">
+    <a class='right-next' id="next-link" href="intro_to_4d.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Using <code class="docutils literal notranslate"><span class="pre">assert</span></code> for testing</p>
+        <p class="prev-next-title">Working with four dimensional images, masks and functions</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
